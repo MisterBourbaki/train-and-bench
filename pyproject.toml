@@ -1,0 +1,37 @@
+[project]
+name = "train-and-bench"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "BaptisteMorisse", email = "bmorisse.pro@proton.me" }
+]
+dependencies = [
+    "torch>=2.3.0",
+    "lightning[pytorch-extra]>=2.2.4",
+    "einops>=0.8.0",
+    "tensorboard>=2.16.2",
+    "torchmetrics>=1.4.0.post0",
+    "torchvision>=0.18.0",
+    "torchaudio>=2.3.0",
+    "jsonargparse>=4.28.0",
+    "rich>=13.7.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.4.4",
+    "pre-commit>=3.7.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/train_and_bench"]
